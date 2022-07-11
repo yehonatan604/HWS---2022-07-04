@@ -105,18 +105,16 @@ console.log(createTest(['s', 't', 'r'], ['i', 'n', 'g']));
 console.log(messages.exercise4);
 
 function erase(str) {
-    var newWord = [];
-    for (var i = 0, j = 0; i < str.length; i++) {
+    var newWord = "";
+    for (var i = 0; i < str.length; i++) {
         if (str[i] != '#') {
-            newWord[j] = str[i];
-            j++;
+            newWord += str[i];
         }
         else {
-            j--;
-            newWord[j] = '';
+            newWord = newWord.slice(0, -1);
         }
     }
-    return newWord.join("");
+    return newWord;
 }
 
 console.log(erase("he##l#hel#llo"));
